@@ -1,0 +1,31 @@
+{
+  "name": "handsketched",
+  "version": "0.0.1",
+  "description": "A website for Daniel Fallon that shows off his whimsical style",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No test system has been written yet\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheElf/HandSketched.git"
+  },
+  "author": "Daniel Fallon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheElf/HandSketched/issues"
+  },
+  "homepage": "https://github.com/TheElf/HandSketched#readme",
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.0.0-beta.17",
+    "source-map-loader": "^0.1.5",
+    "typescript": "^2.1.4",
+    "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "@types/react": "^0.14.55",
+    "@types/react-dom": "^0.14.19",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  }
+}
