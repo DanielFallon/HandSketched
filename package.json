@@ -1,0 +1,19 @@
+{
+  "name": "handsketched",
+  "version": "0.0.1",
+  "description": "A website for Daniel Fallon that shows off his whimsical style",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheElf/HandSketched.git"
+  },
+  "author": "Daniel Fallon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheElf/HandSketched/issues"
+  },
+  "homepage": "https://github.com/TheElf/HandSketched#readme"
+}
