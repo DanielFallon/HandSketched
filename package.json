@@ -4,7 +4,10 @@
   "description": "A website for Daniel Fallon that shows off his whimsical style",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"No test system has been written yet\" && exit 0"
+    "test": "echo \"No test system has been written yet\" && exit 0",
+    "prebuild": "tsc --project src/build/tsconfig.json",
+    "prebuild:webpack:client": "",
+    "build:webpack:client": "webpack --config ./dist/build/webpack.client.config.js"
   },
   "repository": {
     "type": "git",
