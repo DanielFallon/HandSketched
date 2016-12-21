@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"No test system has been written yet\" && exit 0",
-    "prebuild": "tsc --project src/build/tsconfig.json",
+    "clean": "rimraf ./dist",
+    "prebuild": "tsc ./src/build/webpack.config.client.ts",
     "prebuild:webpack:client": "",
     "build:webpack:client": "webpack --config ./dist/build/webpack.client.config.js"
   },
@@ -20,7 +21,10 @@
   },
   "homepage": "https://github.com/TheElf/HandSketched#readme",
   "devDependencies": {
+    "@types/node": "^6.0.52",
+    "@types/webpack": "^2.0.0",
     "awesome-typescript-loader": "^3.0.0-beta.17",
+    "rimraf": "^2.5.4",
     "source-map-loader": "^0.1.5",
     "typescript": "^2.1.4",
     "webpack": "^1.14.0"
