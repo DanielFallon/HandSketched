@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"No test system has been written yet\" && exit 0",
-    "clean": "rimraf ./dist",
-    "prebuild": "tsc ./src/build/webpack.config.client.ts",
-    "prebuild:webpack:client": "",
-    "build:webpack:client": "webpack --config ./dist/build/webpack.client.config.js"
+    "clean": "rimraf ./dist && rimraf ./build",
+    "prebuild": "tsc --project ./src/build",
+    "build": "webpack --env.development --config ./build/scripts/webpack.config.js",
+    "start": "node ./dist/server/index.js"
   },
   "repository": {
     "type": "git",
@@ -21,17 +21,18 @@
   },
   "homepage": "https://github.com/TheElf/HandSketched#readme",
   "devDependencies": {
-    "@types/node": "^6.0.52",
-    "@types/webpack": "^2.0.0",
-    "awesome-typescript-loader": "^3.0.0-beta.17",
+    "@types/node": "^6.0.53",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.18.0",
+    "react-hot-loader": "^1.3.1",
     "rimraf": "^2.5.4",
-    "source-map-loader": "^0.1.5",
+    "ts-loader": "^1.3.3",
     "typescript": "^2.1.4",
-    "webpack": "^1.14.0"
+    "webpack": "^2.2.0-rc.2",
+    "webpack-dev-server": "^2.2.0-rc.0"
   },
   "dependencies": {
-    "@types/react": "^0.14.55",
-    "@types/react-dom": "^0.14.19",
     "react": "^15.4.1",
     "react-dom": "^15.4.1"
   }

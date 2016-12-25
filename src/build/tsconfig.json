@@ -1,17 +1,12 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
-    "sourceMap": true,
-    "noImplicitAny": false,
-    "outDir": "../../dist",
-    "rootDir": "../",
-    "baseUrl": "../"
+      "noImplicitAny": false,
+      "outDir": "../../build/scripts",
+      "baseUrl": "../../"
   },
   "include": [
-    "build"
+      "./**/*"
   ],
   "exclude": [
-    "node_modules"
   ]
 }
