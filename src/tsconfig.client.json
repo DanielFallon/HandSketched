@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "jsx": "preserve",
+        "module": "commonJs",
+        "noImplicitAny": false,
+        "outDir": "../dist",
+        "baseUrl": "../"
+    },
+    "include": [
+        "./**/*"
+    ],
+    "exclude": [
+        "../node_modules",
+        "./development",
+        "./build",
+        "./server"
+    ]
+}

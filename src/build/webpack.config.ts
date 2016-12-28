@@ -3,19 +3,12 @@
  */
 
 import {Configuration as WebpackConfig} from 'webpack';
-import {DevServerConfig} from './webpack/dev';
+import {DevClientConfig, DevServerConfig} from './webpack/dev';
 
-let PartialConfigs = {
-    DevConfig: DevServerConfig,
-    ProdConfig: require("./webpack/prod"),
-    ServerConfig: require("./webpack/server"),
-    ClientConfig: require("./webpack/client"),
-};
-// export function resolveConfig({development}):WebpackConfig{
-//     const ifDev = then => development? then : null;
-//     const ifProd = then => !development? then : null;
-//
-//     return PartialConfigs.DevConfig;
-// }
+import {ClientConfig} from './webpack/prod';
 
-export = DevServerConfig;
+export = ({development,target}) =>{
+    if(development && target === 'server') return DevServerConfig;
+    if(development && target === 'client') return DevClientConfig;
+    if(target === 'client')return ClientConfig;
+}

@@ -1,0 +1,16 @@
+{
+    "extends": "./tsconfig.prod.json",
+    "compilerOptions": {
+        "module": "commonJs",
+        "noImplicitAny": false,
+        "outDir": "../build",
+        "baseUrl": "../"
+    },
+    "include": [
+        "./build/**/*"
+    ],
+    "exclude": [
+      "../node_modules",
+        "./development"
+    ]
+}

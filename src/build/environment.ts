@@ -4,7 +4,9 @@
 
 import * as path from 'path';
 
-export let ProjectRoot  = path.join(__dirname,'..','..');
-export let SourceRoot = path.join(ProjectRoot, 'src');
-export let BuildRoot = path.join(ProjectRoot, 'build');
-export let DistRoot = path.join(ProjectRoot, 'dist');
+export let ProjectRoot  = path.join(__dirname,'..');
+export let SourceRoot = path.resolve(ProjectRoot, 'src');
+export let BuildRoot = path.resolve(ProjectRoot, 'build');
+export let DistRoot = path.resolve(ProjectRoot, 'dist');
+export let DataFolder = path.resolve(ProjectRoot, 'data');
+
