@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "outDir": "../dist",
+        "baseUrl": "../",
+        "rootDir": "./",
+        "sourceMap": true
+    },
+    "extends": "./tsconfig.prod.json",
+    "include": [
+        "./server/**/*"
+    ],
+    "exclude": [
+        "../node_modules",
+        "./client",
+        "./development"
+    ]
+}
