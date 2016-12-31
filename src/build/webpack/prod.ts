@@ -19,16 +19,16 @@ export let ClientConfig: WebpackConfig = {
         publicPath:  "/assets/"
     },
     resolve: {
-        extensions: ['.ts', '.tsx','.js']
+        extensions: ['.ts','.js']
     },
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
+                test: /\.ts$/,
                 use: [{
                     loader: 'babel-loader',
                     options: {
-                        presets: ["es2015","react"]
+                        presets: ["es2015"]
                     }
                 }, {
                     loader: 'ts-loader',
@@ -36,6 +36,17 @@ export let ClientConfig: WebpackConfig = {
                         configFileName: "tsconfig.client.json"
                     }
                 }]
+            },
+            {
+                test: /\.js$/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ["es2015"]
+                        }
+                    }
+                ]
             }
         ]
     }
