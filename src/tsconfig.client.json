@@ -4,7 +4,8 @@
         "module": "commonJs",
         "noImplicitAny": false,
         "outDir": "../dist",
-        "baseUrl": "../"
+        "baseUrl": "../",
+        "sourceMap": true
     },
     "include": [
         "./**/*"
