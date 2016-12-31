@@ -7,23 +7,40 @@ export interface SetItem {
     equals(object: Object);
 }
 
-export class OrderedSet<T extends SetItem> extends Array{
+export class OrderedSet<T extends SetItem> extends Array<T>{
     private _uniqueItems:any;
-    private _length:number;
-
-    public indexOf(item:T):void{
-        this.throwNotImplemented("indexOf");
+    public has(item:T):boolean{
+        return this._uniqueItems[item.hashCode] !== undefined;
     }
     public pop():T{
-        let output = super.pop() as SetItem;
+        let output = super.pop() as T;
         delete this._uniqueItems[output.hashCode];
+        return output;
     }
-    public push(...items:T[]):void{
+    public push(...items:T[]):number{
         items.map((item)=>{
-            this._uniqueItems[item.hashCode] = super.push(item)-1;
+            if(this.has(item))
+                throw Error(`Set already contains: ${item}`);
+            super.push(item);
+            this._uniqueItems[item.hashCode] = true;
         });
+        return super.length;
     }
-    private throwNotImplemented(methodName: string):void{
+    public shift():T{
+        let output = super.shift() as T;
+        delete this._uniqueItems[output.hashCode];
+        return output
+    }
+    public unshift(...items:T[]):number{
+        items.map((item)=>{
+            if(this.has(item))
+                throw Error(`Set already contains: ${item}`);
+            super.unshift(item);
+            this._uniqueItems[item.hashCode] = true;
+        });
+        return super.length;
+    }
+    private static throwNotImplemented(methodName: string):void{
         throw Error(`method "${methodName}" is not implemented`);
     }
 }
