@@ -1,0 +1,29 @@
+#dockerfile for the project
+#Needs to include npm commands
+#And create container for project after finished
+#########################################
+
+#start with Ubuntu base image
+FROM node:7.4
+
+#Author
+MAINTAINER Matthew Fallon
+
+
+#Add Handsketched directory into build
+RUN mkdir -p /usr/src/HandSketched
+
+WORKDIR /usr/src/HandSketched
+
+COPY . .
+
+#Grab dependencies
+RUN npm install
+
+#clean and build
+RUN npm run clean
+RUN npm run build:prod
+
+#start server and open standard port
+EXPOSE 8080
+RUN npm run start
